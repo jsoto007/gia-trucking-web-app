@@ -8,13 +8,6 @@ import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
 import Image from 'next/image'
 import NavBar from './NavBar'
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
-
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -34,18 +27,6 @@ export default function Example() {
                 <span className="sr-only">Close menu</span>
                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
               </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </div>
-              </div>
             </div>
           </Dialog.Panel>
         </Dialog>
@@ -92,7 +73,7 @@ export default function Example() {
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                  <h1 className="text-6xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                     GIA BLESSED TRUCKING
                   </h1>
                   <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
