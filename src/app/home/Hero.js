@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import trucks from "../../../public/trucks.jpg"
 import giaBlueTruck from "../../../public/giaBlueTruck.jpg"
 import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
@@ -75,7 +75,7 @@ export default function Example() {
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <div className='flex flex-row'>
                   <h1 className='text-orange-400'>Logo goes Here</h1>
-                  <h1 className="text-6xl font-bold tracking-tight text-indigo-900 sm:text-6xl font-mono">
+                  <h1 className="text-6xl font-bold tracking-tight text-slate-800 sm:text-6xl font-mono">
                     GIA BLESSED TRUCKING
                   </h1>
                   </div>
