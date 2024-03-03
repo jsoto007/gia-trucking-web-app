@@ -5,6 +5,8 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import trucks from "../../../public/trucks.jpg"
 import giaBlueTruck from "../../../public/giaBlueTruck.jpg"
 import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
+import giaLogo from "../../../public/giaLogo.png"
+
 import Image from 'next/image'
 import NavBar from './NavBar'
 
@@ -73,11 +75,18 @@ export default function Example() {
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <div className='flex flex-row'>
-                  <h1 className='text-orange-400'>Logo goes Here</h1>
-                  <h1 className="text-6xl font-bold tracking-tight text-slate-800 sm:text-6xl font-mono">
-                    GIA BLESSED TRUCKING
-                  </h1>
+                  <div className='flex flex-auto'>
+                    <div>
+                      <Image
+                      src={giaLogo}
+                      className='h-350 w-auto md:-mt-12'
+                      />
+                    </div>
+                    <div>
+                      <h1 className="text-6xl font-bold tracking-tight text-slate-800 sm:text-6xl font-mono">
+                      GIA BLESSED TRUCKING
+                      </h1>
+                    </div>
                   </div>
                   <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                   Experience the ultimate transportation solution with our trusted services. We are dedicated to delivering unmatched excellence, going beyond the miles to ensure your complete satisfaction.
