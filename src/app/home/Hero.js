@@ -2,10 +2,10 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import trucks from "../../../public/trucks.jpg"
-import giaBlueTruck from "../../../public/giaBlueTruck.jpg"
-import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
-import giaLogo from "../../../public/giaLogo.png"
+import trucks from "../../public/trucks.jpg"
+import giaBlueTruck from "../../public/giaBlueTruck.jpg"
+import giaGreenTruck from "../../public/giaGreenTruck.jpg"
+import giaLogo from "../../public/giaLogo.png"
 
 import Image from 'next/image'
 import NavBar from './NavBar'
