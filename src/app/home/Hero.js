@@ -2,11 +2,10 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import trucks from "../../../public/trucks.jpg"
-import giaBlueTruck from "../../../public/giaBlueTruck.jpg"
-import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
-import giaLogo from "../../../public/giaLogo.png"
-
+// import trucks from "../../../public/trucks.jpg"
+// import giaBlueTruck from "../../../public/giaBlueTruck.jpg"
+// import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
+// import giaLogo from "../../../public/giaLogo.png"
 import Image from 'next/image'
 import NavBar from './NavBar'
 
@@ -78,7 +77,7 @@ export default function Example() {
                   <div className='flex flex-auto'>
                     <div>
                       <Image
-                      src={giaLogo}
+                      src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                       className='h-350 w-auto md:-mt-12'
                       />
                     </div>
@@ -114,7 +113,7 @@ export default function Example() {
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
                       <Image
-                        src={giaBlueTruck}
+                        src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         alt=""
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
@@ -132,7 +131,7 @@ export default function Example() {
                   <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                     <div className="relative">
                       <Image
-                        src={trucks}
+                        src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         alt="White Trucks parked"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
@@ -140,7 +139,7 @@ export default function Example() {
                     </div>
                     <div className="relative">
                       <Image
-                        src={giaGreenTruck}
+                        src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         alt="GIA Green truck"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
