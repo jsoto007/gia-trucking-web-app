@@ -129,13 +129,14 @@ export default function NavBar() {
                 <div className="flex-shrink-0">
                   <Image
                     className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src={GiaLogoFinal}
                     alt="Truck"
                   />
                 </div>  
                 <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">Tom Cook</div>
-                  <div className="text-sm font-medium text-gray-500">tom@example.com</div>
+                  <div className="text-base font-medium text-gray-800">Gia Blessed Trucking</div>
+                  <div className="text-sm font-medium text-gray-500 " href="tel:+1 (201) 731-6299">201-731-6299</div>
+                  <div className="text-sm font-medium text-gray-500" href="mailto:Officemanager@giablessedtrucking.com" >Officemanager@giablessedtrucking.com</div>
                 </div>
               
               </div>
