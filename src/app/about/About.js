@@ -9,7 +9,7 @@ export default function About() {
         <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
           <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
             <p className="text-xl leading-8 text-gray-600">
-            At GIA Blessed Trucking, we are committed to delivering outstanding logistical services to our clients with honesty, dependability, and effectiveness. Our focus is on ensuring safe, timely, and cost-effective delivery of every shipment while continuously innovating and adapting to meet our customers' evolving needs.
+            At GIA Blessed Trucking, we are committed to delivering outstanding logistical services to our clients with honesty, dependability, and effectiveness. Our focus is on ensuring safe, timely, and cost-effective delivery of every shipment while continuously innovating and adapting to meet our customers evolving needs.
             </p>
             <div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
               <p>
