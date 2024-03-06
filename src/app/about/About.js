@@ -23,8 +23,16 @@ export default function About() {
           <div className="lg:flex lg:flex-auto lg:justify-center">
             <dl className="w-64 space-y-8 xl:w-80">
                 <div className="flex flex-col-reverse gap-y-4">
-                  <dt className="text-base leading-7 text-gray-600">label</dt>
-                  <dd className="text-5xl font-semibold tracking-tight text-gray-900">Value</dd>
+                  <dt className="text-base leading-7 text-gray-600">We offer services in all 50 states</dt>
+                  <dd className="text-5xl font-semibold tracking-tight text-gray-900">All USA</dd>
+                </div>
+                <div className="flex flex-col-reverse gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">Logistics Solutions</dt>
+                  <dd className="text-5xl font-semibold tracking-tight text-gray-900">24/7</dd>
+                </div>
+                <div className="flex flex-col-reverse gap-y-4">
+                  <dt className="text-base leading-7 text-gray-600">We offer services 365 days a year</dt>
+                  <dd className="text-5xl font-semibold tracking-tight text-gray-900">365</dd>
                 </div>
             </dl>
           </div>

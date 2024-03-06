@@ -42,7 +42,7 @@ export default function Contact() {
                   <PhoneIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-gray-900" href="tel:+1 (555) 234-5678">
+                  <a className="hover:text-gray-900" href="tel:+1 (201) 731-6299">
                     +1 201-731-6299
                   </a>
                 </dd>
@@ -53,7 +53,7 @@ export default function Contact() {
                   <EnvelopeIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-gray-900" href="mailto:hello@example.com">
+                  <a className="hover:text-gray-900" href="mailto:Officemanager@giablessedtrucking.com">
                   Officemanager@giablessedtrucking.com
                   </a>
                 </dd>
