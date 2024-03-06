@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
-import giaLogo from "../../../public/giaLogo.png"
+import GiaLogoFinal from "../../../public/GiaLogoFinal.png"
 import Image from 'next/image'
 
 function classNames(...classes) {
@@ -31,7 +31,7 @@ export default function NavBar() {
                 <div className="flex flex-shrink-0 items-center">
                   <Image
                     className="h-8 w-auto"
-                    src={giaLogo}
+                    src={GiaLogoFinal}
                     alt="GIA BLESSED TRUCKING"
                   />
                 </div>
@@ -94,7 +94,7 @@ export default function NavBar() {
 
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 pb-3 pt-2">
-              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+
               <Disclosure.Button
                 as="a"
                 href="#"

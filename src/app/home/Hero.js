@@ -2,11 +2,9 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import trucks from "../../../public/trucks.jpg"
-import giaBlueTruck from "../../../public/giaBlueTruck.jpg"
-import giaGreenTruck from "../../../public/giaGreenTruck.jpg"
 
-import giaLogo from "../../../public/giaLogo.png"
+
+import GiaLogoFinal from "../../../public/GiaLogoFinal.png"
 
 import Image from 'next/image'
 import NavBar from './NavBar'
@@ -79,8 +77,8 @@ export default function Example() {
                   <div className='flex flex-auto'>
                     <div>
                       <Image
-                      src={giaLogo}
-                      className='h-350 w-auto md:-mt-12'
+                      src={GiaLogoFinal}
+                      className='h-350 w-auto md:-mt-4'
                       />
                     </div>
                     <div>
@@ -114,11 +112,11 @@ export default function Example() {
                   </div>
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
-                      <Image
+                      {/* <Image
                         src={giaBlueTruck}
                         alt="GIA blue truck"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
+                      /> */}
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                     <div className="relative">
@@ -132,19 +130,19 @@ export default function Example() {
                   </div>
                   <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                     <div className="relative">
-                      <Image
+                      {/* <Image
                         src={trucks}
                         alt="White Trucks parked"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
+                      /> */}
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                     <div className="relative">
-                      <Image
+                      {/* <Image
                         src={giaGreenTruck}
                         alt="GIA Green truck"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
+                      /> */}
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
