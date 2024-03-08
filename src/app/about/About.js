@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
 
   return(
-    <div className="bg-white mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
+    <div className="bg-white mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8" id="about">
       <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
         <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">

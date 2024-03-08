@@ -4,12 +4,20 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
 import GiaLogoFinal from "../../../public/GiaLogoFinal.png"
 import Image from 'next/image'
+import { Link } from "react-scroll/modules"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function NavBar() {
+
+  const navigation = [
+    { name: 'Home', to: "home" },
+    { name: 'About', to: "about" },
+    { name: 'Contact', to: "contact" },
+  ]
+
   return (
     <Disclosure as="nav" className="bg-white/95 shadow sticky top-0 z-50">
       {({ open }) => (
@@ -36,24 +44,20 @@ export default function NavBar() {
                   />
                 </div>
                 <div className="hidden md:ml-6 md:flex md:space-x-8">
-                  <a
-                    href="#"
-                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    About
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Contact
-                  </a>
+                
+                    {navigation.map((item) => (
+                      <button 
+                        key={item.name} 
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        <Link to={item.to} smooth={true} duration={500} offset={40}>
+                          <ul>
+                            {item.name}
+                          </ul>
+                        </Link>
+                      </button>
+                    ))}
+            
                 </div>
               </div>
               <div className="flex items-center">
