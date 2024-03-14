@@ -1,4 +1,3 @@
-
 import Hero from "../app/home/Hero"
 import About from "./about/About";
 import Contact from "./components/Contact";
