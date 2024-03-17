@@ -23,7 +23,9 @@ export default function Contact() {
           console.log('FAILED...', error.text);
         },
       );
+      e.target.reset();
   };
+
 
   
   return (

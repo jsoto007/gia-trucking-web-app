@@ -79,6 +79,7 @@ export default function Example() {
                       <Image
                       src={GiaLogoFinal}
                       className='h-350 w-auto md:-mt-4'
+                      alt='GIA LOGO'
                       />
                     </div>
                     <div>
