@@ -2,32 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  body {
+    @apply bg-sand-50 text-ink-900 antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  ::selection {
+    @apply bg-sun-400 text-ink-950;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.2em];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition duration-200;
+  }
+
+  .btn-sun {
+    @apply btn bg-sun-500 text-ink-950 shadow-[0_10px_30px_-10px_rgba(242,140,40,0.7)] hover:bg-sun-400;
+  }
+
+  .btn-ghost {
+    @apply btn text-sand-50 ring-1 ring-inset ring-white/25 hover:bg-white/10;
+  }
+
+  .btn-ink {
+    @apply btn bg-ink-900 text-sand-50 hover:bg-ink-700;
+  }
+
+  .field {
+    @apply block w-full rounded-xl border-0 bg-white px-4 py-3 text-base text-ink-900 ring-1 ring-inset ring-ink-900/15 placeholder:text-steel-500 focus:ring-2 focus:ring-inset focus:ring-sun-500 sm:text-sm;
+  }
+
+  .grid-lines {
+    background-image: linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Focus ring as an outline (unlayered, so button ring utilities can't
+   override it): ink on light surfaces, orange on dark ones. */
+:focus-visible {
+  outline: 2px solid #f28c28;
+  outline-offset: 3px;
+}
+
+.surface-light :focus-visible {
+  outline-color: #0b1426;
+}
+
+.surface-dark :focus-visible {
+  outline-color: #f28c28;
+}
+
+/* Hero entrance: pure CSS so first paint never waits on JavaScript. The
+   headline only slides (no fade) so it still counts as the LCP right away. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    transform: translateY(22px);
+  }
+}
+
+.hero-in {
+  animation: hero-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms) both;
+}
+
+.hero-rise {
+  animation: hero-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Scroll-in reveal. Armed by an inline script in layout.js; .reveal-all is
+   its fail-safe if the app bundle never hydrates, so content can't stay
+   hidden. Reduced-motion users never see it hidden at all. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal].is-visible,
+.js.reveal-all [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* SMIL animateMotion ignores CSS animation rules. */
+  .route-dot {
+    display: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
   }
 }
