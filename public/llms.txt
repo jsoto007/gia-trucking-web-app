@@ -1,0 +1,21 @@
+# GIA Blessed Trucking Inc
+
+> New Jersey trucking company and for-hire motor carrier of property (except household goods). Hauls full truckload general freight and intermodal containers on interstate authority across the lower 48 states, with dispatch available 24 hours a day, 365 days a year.
+
+- USDOT number: 3875433
+- MC number: MC-1420159
+- Authority: verify on FMCSA SAFER: https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3875433
+- Phone (dispatch, 24/7): (201) 731-6299
+- Email: officemanager@giablessedtrucking.com
+- Quotes: https://giablessedtrucking.com/#quote
+
+## Services
+
+- [Full truckload freight](https://giablessedtrucking.com/#services): dedicated truck for dry general freight, scheduled pickups, run direct to the receiver.
+- [Intermodal container trucking](https://giablessedtrucking.com/#services): container loads moved between terminals and warehouses, delivered to appointment.
+- [Regional & long-haul trucking](https://giablessedtrucking.com/#services): interstate lanes out of New Jersey across the lower 48, one-off or recurring.
+
+## More
+
+- [How we work](https://giablessedtrucking.com/#process): quote, confirmed pickup window, status from dispatch on request, signed proof of delivery.
+- [FAQ](https://giablessedtrucking.com/#faq)
