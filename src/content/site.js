@@ -25,15 +25,6 @@ export const nav = [
   { label: "FAQ", href: "#faq" },
 ];
 
-export const credentials = [
-  { label: "USDOT", value: company.usdot },
-  { label: "MC number", value: company.mc },
-  { label: "Authority", value: "For-hire · Property" },
-  { label: "Operation", value: "Interstate" },
-  { label: "Cargo", value: "General freight · Containers" },
-  { label: "Dispatch", value: "24 / 7 / 365" },
-];
-
 export const services = [
   {
     id: "01",
