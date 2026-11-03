@@ -1,20 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { company } from "@/content/site";
+import { freightTypes } from "@/lib/quote";
 import { CheckIcon, ClockIcon, MailIcon, PhoneIcon } from "./Icons";
-
-// EmailJS client-side ids (public by design). The template reads
-// subject / email / phone_number / message, so every quote detail is folded
-// into `message`; the extra params are there if the template is extended.
-const EMAILJS = {
-  service: "service_xtdhy8f",
-  template: "template_6qt1izy",
-  publicKey: "_cP9azToazeRYCd3T",
-};
-
-const freightTypes = ["Full truckload (general freight)", "Intermodal container", "Not sure yet"];
 
 function Field({ label, name, required, className = "", children, ...input }) {
   return (
@@ -28,23 +17,6 @@ function Field({ label, name, required, className = "", children, ...input }) {
       </div>
     </div>
   );
-}
-
-export function buildMessage(d) {
-  return [
-    `Name: ${d.name}`,
-    d.company ? `Company: ${d.company}` : null,
-    `Phone: ${d.phone}`,
-    `Email: ${d.email}`,
-    `Freight: ${d.freight}`,
-    `Pickup: ${d.pickup}`,
-    `Delivery: ${d.delivery}`,
-    d.date ? `Ready date: ${d.date}` : null,
-    "",
-    d.details || "(no extra details)",
-  ]
-    .filter((line) => line !== null)
-    .join("\n");
 }
 
 export default function Quote() {
@@ -65,23 +37,13 @@ export default function Quote() {
     if (d.website) return; // honeypot: bots fill every field
     setStatus("sending");
     try {
-      await emailjs.send(
-        EMAILJS.service,
-        EMAILJS.template,
-        {
-          subject: `Quote request: ${d.pickup} → ${d.delivery}`,
-          email: d.email,
-          phone_number: d.phone,
-          message: buildMessage(d),
-          from_name: d.name,
-          company: d.company,
-          freight: d.freight,
-          pickup: d.pickup,
-          delivery: d.delivery,
-          ready_date: d.date,
-        },
-        { publicKey: EMAILJS.publicKey },
-      );
+      // The server validates, then sends through Mailgun (app/api/quote/route.js).
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(d),
+      });
+      if (!res.ok) throw new Error(`quote ${res.status}`);
       form.reset();
       setStatus("sent");
     } catch {
