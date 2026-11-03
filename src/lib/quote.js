@@ -1,6 +1,6 @@
 // Quote request rules, shared by the form (Quote.js) and the server route
 // (app/api/quote/route.js). Pure functions, no imports, so `node --test` can
-// load them directly.
+// load them directly. The email itself is built in quoteEmail.js.
 
 export const freightTypes = ["Full truckload (general freight)", "Intermodal container", "Not sure yet"];
 
@@ -52,25 +52,4 @@ export function validateQuote(input) {
   if (!errors.date && data.date && !DATE.test(data.date)) errors.date = "invalid";
 
   return Object.keys(errors).length ? { ok: false, errors } : { ok: true, data };
-}
-
-export function quoteSubject(d) {
-  return `Quote request: ${d.pickup} → ${d.delivery}`;
-}
-
-export function buildMessage(d) {
-  return [
-    `Name: ${d.name}`,
-    d.company ? `Company: ${d.company}` : null,
-    `Phone: ${d.phone}`,
-    `Email: ${d.email}`,
-    `Freight: ${d.freight}`,
-    `Pickup: ${d.pickup}`,
-    `Delivery: ${d.delivery}`,
-    d.date ? `Ready date: ${d.date}` : null,
-    "",
-    d.details || "(no extra details)",
-  ]
-    .filter((line) => line !== null)
-    .join("\n");
 }

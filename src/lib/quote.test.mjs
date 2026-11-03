@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { buildMessage, freightTypes, quoteSubject, validateQuote } from "./quote.js";
+import { freightTypes, validateQuote } from "./quote.js";
 
 const good = {
   name: "Dana Ruiz",
@@ -59,21 +59,13 @@ test("caps field lengths", () => {
   assert.equal(r.errors.name, "too_long");
 });
 
-test("line breaks never reach the subject", () => {
-  const r = validateQuote({ ...good, pickup: "Newark\r\nBcc: x@y.com", delivery: "Atlanta" });
+test("single-line fields lose their line breaks", () => {
+  const r = validateQuote({ ...good, pickup: "Newark\r\nBcc: x@y.com" });
   assert.equal(r.ok, true);
-  assert.equal(quoteSubject(r.data).includes("\n"), false);
-  assert.equal(quoteSubject(r.data), "Quote request: Newark Bcc: x@y.com → Atlanta");
+  assert.equal(r.data.pickup, "Newark Bcc: x@y.com");
 });
 
 test("rejects non-object payloads", () => {
   assert.equal(validateQuote(null).ok, false);
   assert.equal(validateQuote("hi").ok, false);
-});
-
-test("message lists every field and skips empty optionals", () => {
-  const msg = buildMessage(validateQuote({ ...good, company: "", date: "" }).data);
-  assert.match(msg, /^Name: Dana Ruiz\nPhone: \(973\) 555-0100\nEmail: dana@acme\.example\n/);
-  assert.doesNotMatch(msg, /Company:|Ready date:/);
-  assert.match(msg, /\n\n22 pallets\n38,000 lb$/);
 });

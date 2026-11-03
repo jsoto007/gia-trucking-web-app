@@ -1,4 +1,5 @@
-import { buildMessage, quoteSubject, validateQuote } from "@/lib/quote";
+import { validateQuote } from "@/lib/quote";
+import { quoteEmail } from "@/lib/quoteEmail";
 
 // Sends quote requests through Mailgun. The API key and the recipient live only
 // in server env vars (see README), so the browser never sees either.
@@ -47,12 +48,19 @@ export async function POST(request) {
   }
 
   const d = result.data;
+  const email = quoteEmail(d, { receivedAt: new Date() });
   const form = new URLSearchParams({
     from: MAILGUN_FROM || `GIA Quote Form <quotes@${MAILGUN_DOMAIN}>`,
     to: QUOTE_TO,
-    subject: quoteSubject(d),
-    text: buildMessage(d),
+    subject: email.subject,
+    text: email.text,
+    html: email.html,
     "h:Reply-To": d.name ? `${d.name.replace(/["<>]/g, "")} <${d.email}>` : d.email,
+    // Internal notification: no open pixel, no rewritten links. (The domain's
+    // unsubscribe footer can only be turned off in Mailgun's domain settings.)
+    "o:tracking": "no",
+    "o:tracking-clicks": "no",
+    "o:tracking-opens": "no",
   });
   if (MAILGUN_TEST_MODE === "yes") form.set("o:testmode", "yes");
 
