@@ -34,8 +34,9 @@ Node 22 (`.nvmrc`); Next 16 needs Node ≥ 20.9.
 The form (`src/components/Quote.js`) posts JSON to `POST /api/quote`
 (`src/app/api/quote/route.js`), which Netlify runs as a function. The route
 checks the request comes from this site, validates it with
-`src/lib/quote.js` (same rules the form uses), and sends a plain-text email
-through Mailgun with Reply-To set to the customer. A hidden honeypot field is
+`src/lib/quote.js` (same rules the form uses), and sends an HTML email with a
+plain-text part (`src/lib/quoteEmail.js`) through Mailgun, Reply-To set to the
+customer and open/click tracking off. A hidden honeypot field is
 accepted quietly and sends nothing.
 
 Set these in Netlify → Project configuration → Environment variables
