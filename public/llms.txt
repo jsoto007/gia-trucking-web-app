@@ -5,7 +5,7 @@
 - USDOT number: 3875433
 - MC number: MC-1420159
 - Authority: verify on FMCSA SAFER: https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3875433
-- Phone (dispatch, 24/7): (201) 731-6299
+- Phone (dispatch, 24/7): (347) 825-1155
 - Email: officemanager@giablessedtrucking.com
 - Quotes: https://giablessedtrucking.com/#quote
 
