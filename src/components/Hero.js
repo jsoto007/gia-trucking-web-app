@@ -1,5 +1,6 @@
 import Image from "next/image";
-// Same photo as giaBlueTruck.jpeg with the decal's mistyped GVW line blurred.
+// Same photo as giaBlueTruck.jpeg: the decal's USDOT, MC and GVW lines are
+// painted out so it shows only the company name.
 import truck from "../../public/hero-truck.jpg";
 import { company, ticker } from "@/content/site";
 import { ArrowIcon, PhoneIcon } from "./Icons";
@@ -49,7 +50,7 @@ export default function Hero() {
     <section id="top" className="surface-dark relative isolate overflow-hidden bg-ink-950 text-sand-50">
       <Image
         src={truck}
-        alt="Blue GIA Blessed Trucking Volvo tractor with its USDOT and MC numbers on the door"
+        alt="Blue GIA Blessed Trucking Volvo tractor with the company name on the door"
         priority
         placeholder="blur"
         sizes="100vw"

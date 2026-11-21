@@ -2,9 +2,6 @@
 
 > New Jersey trucking company and for-hire motor carrier of property (except household goods). Hauls full truckload general freight and intermodal containers on interstate authority across the lower 48 states, with dispatch available 24 hours a day, 365 days a year.
 
-- USDOT number: 3875433
-- MC number: MC-1420159
-- Authority: verify on FMCSA SAFER: https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3875433
 - Phone (dispatch, 24/7): (347) 825-1155
 - Email: officemanager@giablessedtrucking.com
 - Quotes: https://giablessedtrucking.com/#quote

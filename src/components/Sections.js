@@ -2,7 +2,7 @@ import Image from "next/image";
 import yard from "../../public/trucks.jpg";
 import logo from "../../public/GiaLogoFinal.png";
 import { company, faqs, process, services, values } from "@/content/site";
-import { ContainerIcon, ExternalIcon, MailIcon, RouteIcon, ShieldIcon, TruckIcon } from "./Icons";
+import { ContainerIcon, MailIcon, RouteIcon, ShieldIcon, TruckIcon } from "./Icons";
 import { ScrollLitText } from "./Reveal";
 
 function SectionHead({ eyebrow, title, children, dark = false }) {
@@ -189,9 +189,8 @@ export function About() {
 }
 
 export function Credentials() {
+  // `big` renders the value as a large orange figure; leave it off for prose.
   const tiles = [
-    { k: "USDOT number", v: company.usdot },
-    { k: "MC number", v: company.mc },
     { k: "Authority", v: "Motor carrier of property (except household goods)" },
     { k: "Operation", v: "Interstate · General freight · Containers" },
   ];
@@ -212,18 +211,14 @@ export function Credentials() {
                 Check us before you book us.
               </h2>
               <p data-reveal style={{ "--reveal-delay": "100ms" }} className="mt-5 text-lg leading-relaxed text-sand-50/70">
-                Our operating authority is public record with the U.S. Department of Transportation. Look us up,
-                then call us. Brokers and shippers can request our full carrier packet.
+                We are a for-hire motor carrier with interstate operating authority. Brokers and shippers can
+                request our full carrier packet, with our authority details and a current certificate of insurance,
+                before the first load.
               </p>
               <div data-reveal style={{ "--reveal-delay": "180ms" }} className="mt-8 flex flex-wrap gap-3">
-                <a href={company.saferUrl} target="_blank" rel="noopener noreferrer" className="btn-sun">
-                  Verify on FMCSA
-                  <ExternalIcon className="h-4 w-4" />
-                  <span className="sr-only">(opens in a new tab)</span>
-                </a>
                 <a
                   href={`mailto:${company.email}?subject=${encodeURIComponent("Carrier packet request")}`}
-                  className="btn-ghost"
+                  className="btn-sun"
                 >
                   <MailIcon className="h-4 w-4" />
                   Request carrier packet
@@ -239,7 +234,7 @@ export function Credentials() {
                   className="flex min-h-[9.5rem] flex-col justify-between gap-6 bg-ink-950 p-6 sm:p-7"
                 >
                   <dt className="eyebrow text-steel-400">{t.k}</dt>
-                  <dd className={`font-mono font-medium tracking-tight ${i < 2 ? "text-3xl text-sun-400 sm:text-4xl" : "text-lg"}`}>
+                  <dd className={`font-mono font-medium tracking-tight ${t.big ? "text-3xl text-sun-400 sm:text-4xl" : "text-lg"}`}>
                     {t.v}
                   </dd>
                 </div>

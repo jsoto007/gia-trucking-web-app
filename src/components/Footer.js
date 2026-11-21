@@ -39,9 +39,6 @@ export default function Footer() {
                   {company.email}
                 </a>
               </li>
-              <li className="pt-2 font-mono text-xs uppercase tracking-[0.16em] text-steel-400">
-                USDOT {company.usdot} · {company.mc}
-              </li>
             </ul>
           </div>
         </div>

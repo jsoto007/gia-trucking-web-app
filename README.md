@@ -1,6 +1,6 @@
 # GIA Blessed Trucking — website
 
-Marketing site for GIA Blessed Trucking Inc (USDOT 3875433, MC-1420159).
+Marketing site for GIA Blessed Trucking Inc.
 Next.js 16 (App Router; static pages plus one server route) + React 19 +
 Tailwind 3, deployed on Netlify.
 
@@ -19,7 +19,10 @@ Node 22 (`.nvmrc`); Next 16 needs Node ≥ 20.9.
 ## Where things live
 
 - `src/content/site.js` — every business fact and all section copy. Authority,
-  cargo and operation must match the FMCSA SAFER record for USDOT 3875433.
+  cargo and operation must match the company's FMCSA SAFER record. The USDOT
+  and MC numbers are kept off the site on purpose — in copy, metadata,
+  structured data, `llms.txt` and the truck photos (the door decals are
+  painted out). Don't add them back.
 - `src/components/` — `Header`, `Hero`, `Sections` (statement, services,
   process, about, credentials), `Quote` (form), `Footer`.
 - `tailwind.config.js` — brand palette (`ink` navy, `sun` orange, `sand`),
