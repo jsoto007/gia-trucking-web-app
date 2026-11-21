@@ -16,7 +16,7 @@ const mono = JetBrains_Mono({
 });
 
 const description =
-  "New Jersey trucking company (USDOT 3875433, MC-1420159) hauling full truckload freight and intermodal containers across the lower 48. 24/7 dispatch.";
+  "New Jersey trucking company hauling full truckload freight and intermodal containers across the lower 48. 24/7 dispatch.";
 
 export const metadata = {
   metadataBase: new URL(company.url),
@@ -104,10 +104,6 @@ const jsonLd = {
           closes: "23:59",
         },
       },
-      identifier: [
-        { "@type": "PropertyValue", propertyID: "USDOT", value: company.usdot },
-        { "@type": "PropertyValue", propertyID: "MC", value: company.mc },
-      ],
       makesOffer: services.map((svc) => ({
         "@type": "Offer",
         itemOffered: {

@@ -1,6 +1,8 @@
-// Every business fact on the site lives here. Authority numbers, cargo and
-// fleet size come from the FMCSA SAFER snapshot for USDOT 3875433 — keep them
-// in step with that record, and don't add a claim the record can't back.
+// Every business fact on the site lives here. Authority, cargo and fleet size
+// come from the company's FMCSA SAFER snapshot — keep them in step with that
+// record, and don't add a claim the record can't back.
+// The USDOT and MC numbers are kept off the site on purpose (Nov 2026): don't
+// add them back to copy, metadata, structured data, llms.txt or photos.
 
 export const company = {
   name: "GIA Blessed Trucking",
@@ -11,10 +13,6 @@ export const company = {
   phoneDisplay: "(347) 825-1155",
   email: "officemanager@giablessedtrucking.com",
   region: "New Jersey",
-  usdot: "3875433",
-  mc: "MC-1420159",
-  saferUrl:
-    "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3875433",
 };
 
 export const nav = [
@@ -106,11 +104,11 @@ export const faqs = [
   },
   {
     q: "Are you a carrier or a freight broker?",
-    a: `We are a motor carrier: your load moves on our trucks with our drivers. Our USDOT number is ${company.usdot} and our MC number is ${company.mc}.`,
+    a: "We are a motor carrier, not a broker: your load moves on our trucks with our drivers.",
   },
   {
     q: "How can I verify your authority and insurance?",
-    a: `Look up USDOT ${company.usdot} on FMCSA SAFER to see our operating authority, and ask us for a current certificate of insurance or our full carrier packet.`,
+    a: "Ask us for our full carrier packet. It includes our operating authority details and a current certificate of insurance.",
   },
   {
     q: "When can I reach dispatch?",
